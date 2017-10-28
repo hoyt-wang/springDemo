@@ -15,6 +15,7 @@ public class UserServiceTestCase {
     public void saveTest() {
 
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        //UserService userService = (UserService) context.getBean("userServiceImpl");
         UserServiceImpl userService = (UserServiceImpl) context.getBean("userServiceImpl");
         userService.save();
     }
