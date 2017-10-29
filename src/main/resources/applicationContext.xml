@@ -8,7 +8,7 @@
     <bean id="userDao" class="com.kaishengit.dao.UserDao"/>
     <bean id="userServiceImpl" class="com.kaishengit.service.impl.UserServiceImpl">
         <!--<constructor-arg name="userDao" ref="userDao"/>-->
-        <property name="userDao" ref="userDao" />
+        <!--<property name="userDao" ref="userDao" />-->
     <!--    <property name="age" value="23"/>
         <property name="name" value="jack"/>
         <property name="list">

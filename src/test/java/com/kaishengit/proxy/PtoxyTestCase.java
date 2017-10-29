@@ -1,7 +1,9 @@
 package com.kaishengit.proxy;
 
+import com.kaishengit.dao.UserDao;
 import com.kaishengit.service.UserService;
 import com.kaishengit.service.impl.UserServiceImpl;
+import net.sf.cglib.proxy.Enhancer;
 import org.junit.Test;
 
 import java.lang.reflect.Proxy;
@@ -40,6 +42,23 @@ public class PtoxyTestCase {
                 userServiceImpl.getClass().getInterfaces(),myInvocationHandler);
         userService.save();
         userService.delete();
+    }
+
+    @Test
+    public void cglibProxyTest() {
+
+        Enhancer enhancer = new Enhancer();
+
+        //设置目标对象
+        enhancer.setSuperclass(UserDao.class);
+
+        //设置MythodInterceptor接口的实现类
+        enhancer.setCallback(new MyMethodInterceptor());
+
+        //产生目标对象的子类（动态代理类）
+        UserDao userDao = (UserDao) enhancer.create();
+
+        userDao.save();
     }
 
 }
