@@ -22,6 +22,10 @@ public class UserServiceImpl implements UserService {
     private Map<String,String> map;
     private Properties properties;
 
+    public UserServiceImpl(UserDao userDao) {
+        this.userDao = userDao;
+    }
+
     public void setAge(Integer age) {
         this.age = age;
     }
