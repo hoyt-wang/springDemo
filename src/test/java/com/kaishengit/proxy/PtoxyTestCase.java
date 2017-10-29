@@ -5,6 +5,8 @@ import com.kaishengit.service.UserService;
 import com.kaishengit.service.impl.UserServiceImpl;
 import net.sf.cglib.proxy.Enhancer;
 import org.junit.Test;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import java.lang.reflect.Proxy;
 
@@ -41,7 +43,7 @@ public class PtoxyTestCase {
         UserService userService = (UserService) Proxy.newProxyInstance(userServiceImpl.getClass().getClassLoader(),
                 userServiceImpl.getClass().getInterfaces(),myInvocationHandler);
         userService.save();
-        userService.delete();
+        //userService.delete();
     }
 
     @Test
@@ -59,6 +61,15 @@ public class PtoxyTestCase {
         UserDao userDao = (UserDao) enhancer.create();
 
         userDao.save();
+    }
+
+    @Test
+    public void aopTest() {
+        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+        UserService userService = (UserService) context.getBean("userServiceImpl");
+        //System.out.println(userService.getClass().getName());
+        userService.save();
+       // userService.count();
     }
 
 }

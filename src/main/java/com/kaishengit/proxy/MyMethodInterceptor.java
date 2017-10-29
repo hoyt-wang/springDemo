@@ -14,6 +14,7 @@ public class MyMethodInterceptor implements MethodInterceptor {
     public Object intercept(Object o, Method method, Object[] params, MethodProxy methodProxy) throws Throwable {
 
         System.out.println("-----------------");
+        //通过代理类调用父类的方法
         Object result = methodProxy.invokeSuper(o,params);
         System.out.println("------------------");
         return result;

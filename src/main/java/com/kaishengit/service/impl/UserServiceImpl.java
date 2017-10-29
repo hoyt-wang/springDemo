@@ -14,12 +14,20 @@ import java.util.Set;
 
 public class UserServiceImpl implements UserService {
 
-    public void delete() {
+   /* public void delete() {
         System.out.println("deleted...");
-    }
+    }*/
 
     public void save() {
+
+       /* if (true) {
+            throw new RuntimeException("检测异常通知");
+        }*/
         System.out.println("saved...");
+    }
+
+    public int count() {
+        return 100;
     }
 
     //private UserDao userDao;

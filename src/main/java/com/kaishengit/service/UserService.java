@@ -6,5 +6,6 @@ package com.kaishengit.service;
 public interface UserService {
 
     void save();
-    void delete();
+    //void delete();
+    int count();
 }
