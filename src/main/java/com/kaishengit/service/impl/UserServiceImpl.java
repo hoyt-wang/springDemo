@@ -14,19 +14,27 @@ import java.util.Set;
 
 public class UserServiceImpl implements UserService {
 
-    private UserDao userDao;
-    private Integer age;
+    public void delete() {
+        System.out.println("deleted...");
+    }
+
+    public void save() {
+        System.out.println("saved...");
+    }
+
+    //private UserDao userDao;
+   /* private Integer age;
     private  String name;
     private List<String> list;
     private Set<Double> set;
     private Map<String,String> map;
-    private Properties properties;
+    private Properties properties;*/
 
-    public UserServiceImpl(UserDao userDao) {
+   /* public UserServiceImpl(UserDao userDao) {
         this.userDao = userDao;
-    }
+    }*/
 
-    public void setAge(Integer age) {
+    /*public void setAge(Integer age) {
         this.age = age;
     }
 
@@ -48,19 +56,19 @@ public class UserServiceImpl implements UserService {
 
     public void setProperties(Properties properties) {
         this.properties = properties;
-    }
+    }*/
 
-    public void setUserDao(UserDao userDao) {
+   /* public void setUserDao(UserDao userDao) {
         this.userDao = userDao;
-    }
+    }*/
 
-    public void save() {
+   /* public void save() {
 
         System.out.println("---------");
         userDao.save();
         System.out.println("---------");
 
-    }
+    }*/
 
 
 }
